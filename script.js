@@ -1,4 +1,4 @@
-const result = document.getElementById("result"); //savienajamies ar htmlk
+const result = document.getElementById("result"); //savienajamies ar html
 const randomBtn = document.getElementById("randomBtn");
 
 randomBtn.addEventListener("click", async () => {
@@ -31,14 +31,14 @@ randomBtn.addEventListener("click", async () => {
     
     const imageUrl = data.message;           // bildes links
     const parts = imageUrl.split("/");                // sadalam URL pa /
-    const rawBreed = parts[parts.indexOf("breeds") + 1] || "";
+    const rawBreed = parts[parts.indexOf("breeds") + 1] || ""; // dabūjam škirnes nosaukumu,
     const breedName = rawBreed.replace("-", " ");     // piem. "bulldog-french" -> "bulldog french"
     
     // 3. DATU ATTĒLOŠANA - parāda suņa bildi
        if (data.status === "success" && data.message) {
       result.innerHTML = `
         <img src="${imageUrl}" alt="Nejauša suņa bilde"
-             style="max-width: 100%; height: auto; border-radius: 8px;">
+             style="max-width: 400px; height: 400px; border-radius: 8px;">
         <p style="font-weight: bold; text-transform: capitalize;">
           Šķirne: ${breedName || "Nezināma"}
         </p>
@@ -53,7 +53,7 @@ randomBtn.addEventListener("click", async () => {
     
     // Lietotājam draudzīgs ziņojums (bez tehniskiem terminiem)
     result.innerHTML = `
-      <p style="color: red;">😕 Neizdevās ielādēt suņa bildi. 
+      <p style="color: red;">Neizdevās ielādēt suņa bildi. 
       Lūdzu pārbaudi interneta savienojumu un mēģini vēlreiz.</p>
     `;
   } finally {

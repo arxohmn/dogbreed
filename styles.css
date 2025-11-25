@@ -1,7 +1,8 @@
 body {
   font-family: sans-serif;
   text-align: center;
-  background-color: #b1b0b0;
+  background-image: url('https://www.eleanorbowmer.co.uk/cdn/shop/products/dog-wallpaper.png?v=1749038185');
+  background-size: cover;
   margin: 0;
   padding: 20px;
 }
@@ -17,14 +18,24 @@ button {
   font-size: 16px;
   cursor: pointer;
   border: none;
-  background-color: #3498db;
+  background-color: rgb(13, 73, 113);
   color: white;
   border-radius: 4px;
 }
 
-button.random {
-  background-color: #47ec8c;
+#randomBtn {
+  background-color: #0e6a35;
+  margin: 20px;
 }
 
+#searchBtn {
+  margin: 20px;
+}
 
-
+#block {
+  margin-top: 90px;
+  border: 2px solid #333;
+  padding: 50px;
+  background-color: white; opacity: 0.8;
+  display: inline-block;
+}
