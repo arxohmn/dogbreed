@@ -1,5 +1,6 @@
 const result = document.getElementById("result"); //savienajamies ar html
 const randomBtn = document.getElementById("randomBtn");
+const searchBtn = document.getElementById("searchBtn");
 
 randomBtn.addEventListener("click", async () => {
   try {
@@ -35,14 +36,16 @@ randomBtn.addEventListener("click", async () => {
     const breedName = rawBreed.replace("-", " ");     // piem. "bulldog-french" -> "bulldog french"
     
     // 3. DATU ATTĒLOŠANA - parāda suņa bildi
-       if (data.status === "success" && data.message) {
-      result.innerHTML = `
-        <img src="${imageUrl}" alt="Nejauša suņa bilde"
-             style="max-width: 400px; height: 400px; border-radius: 8px;">
-        <p style="font-weight: bold; text-transform: capitalize;">
-          Šķirne: ${breedName || "Nezināma"}
-        </p>
-      `;
+  if (data.status === "success" && data.message) {
+  result.innerHTML = `
+  <div class="dog-card">  
+  <img src="${imageUrl}" alt="Nejauša suņa bilde" class="dog-image">
+    <p class="breed-name">
+      Šķirne: ${breedName || "Nezināma"}
+    </p>
+    </div>
+  `;
+
     } else {
       throw new Error('Neparedzēta datu struktūra');
     }
@@ -60,4 +63,8 @@ randomBtn.addEventListener("click", async () => {
     // Vienmēr atspējo loading state
     randomBtn.disabled = false;
   }
+
+  searchBtn.addEventListener("click", () => {
+  alert('Be more specific with the dog breed. Please!')
+})
 }); 

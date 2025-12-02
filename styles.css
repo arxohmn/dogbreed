@@ -3,7 +3,7 @@ body {
   text-align: center;
   background-image: url('https://www.eleanorbowmer.co.uk/cdn/shop/products/dog-wallpaper.png?v=1749038185');
   background-size: cover;
-  margin: 0;
+  margin: 45px;
   padding: 20px;
 }
 
@@ -23,19 +23,97 @@ button {
   border-radius: 4px;
 }
 
+button:hover {
+color: bisque;
+background-color: orange;
+}
+
+button:active {
+color: yellow;
+background-color: red;
+}
+
 #randomBtn {
   background-color: #0e6a35;
-  margin: 20px;
+  margin-bottom: 20px;
 }
+
+
+#randomBtn:active {
+color: yellow;
+background-color: red;
+}
+
+#randomBtn:hover { 
+color: bisque;
+background-color: orange;
+} */
+
 
 #searchBtn {
-  margin: 20px;
+  margin: 10px;
 }
 
-#block {
+
+#breedInput {
+   width: 500px;
+  height: 40px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+  margin-right: 12px; 
+
+}
+
+#breedInput:focus {
+  border-color: #4CAF50;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center; /* centrē pogas horizontāli */
+    align-items: center; /* centrē vertikāli */
+    margin: 20px 0; /* atstarpe no augšas un apakšas */
+}
+
+.dog-image {
+  max-width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  object-fit: cover;   /* keeps image nicely cropped */
+  display: block;
+  margin: 15px auto;
+}
+
+.breed-name {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 22px;
+}
+
+.dog-card {
+  background: white;
+  padding: 15px 15px 45px;
+  border-radius: 6px;
+  display: inline-block;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transform: rotate(-3deg);
+}
+
+.dog-card:hover {
+  transform: scale(1.03);
+  transition: 0.5s ease;
+}
+
+/* #block {
   margin-top: 90px;
   border: 2px solid #333;
   padding: 50px;
   background-color: white; opacity: 0.8;
   display: inline-block;
-}
+} */
+
